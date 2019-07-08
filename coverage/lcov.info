@@ -18,7 +18,7 @@ DA:5,1
 DA:6,1
 DA:7,1
 DA:8,1
-DA:9,0
+DA:9,1
 DA:11,1
 DA:12,0
 DA:13,0
@@ -29,7 +29,7 @@ DA:17,0
 DA:19,0
 DA:23,1
 LF:16
-LH:8
+LH:9
 BRF:0
 BRH:0
 end_of_record
