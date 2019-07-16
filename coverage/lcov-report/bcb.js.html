@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">57.89% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/19</span>
+        <span class='fraction'>20/20</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">60% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/5</span>
+        <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">56.25% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/16</span>
+        <span class='fraction'>16/16</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -73,7 +73,11 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -83,26 +87,30 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const axios = require('axios')
 &nbsp;
-const getUrl = <span class="fstat-no" title="function not covered" >da</span>ta =&gt; <span class="cstat-no" title="statement not covered" >`https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=%27${data}%27&amp;$top=100&amp;$format=json&amp;$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao`</span>
+const getUrl = data =&gt; `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=%27${data}%27&amp;$top=100&amp;$format=json&amp;$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao`
 &nbsp;
 const getCotacaoAPI = url =&gt; axios.get(url)
 const extractCotacao = res =&gt; res.data.value[0].cotacaoVenda
@@ -110,30 +118,34 @@ const getToday = () =&gt; {
     const today = new Date()
     return (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear()
 }
-const getCotacao = <span class="fstat-no" title="function not covered" >as</span>ync() =&gt; {
-<span class="cstat-no" title="statement not covered" >    try{</span>
-        const today = <span class="cstat-no" title="statement not covered" >getToday()</span>
-        const url = <span class="cstat-no" title="statement not covered" >getUrl(today)</span>
-        const res = <span class="cstat-no" title="statement not covered" >await getCotacaoAPI(url)</span>
-        const cotacao = <span class="cstat-no" title="statement not covered" >extractCotacao(res)</span>
-<span class="cstat-no" title="statement not covered" >        return cotacao</span>
+const getCotacao = ({getToday, getUrl, getCotacaoAPI, extractCotacao}) =&gt; async() =&gt; {
+    try{
+        const today = getToday()
+        const url = getUrl(today)
+        const res = await getCotacaoAPI(url)
+        const cotacao = extractCotacao(res)
+        return cotacao
     }catch(err){
-<span class="cstat-no" title="statement not covered" >        return ''</span>
+        return ''
     }
 }
 &nbsp;
 module.exports = {
     getToday,
     getCotacaoAPI,
-    getCotacao,
-    extractCotacao
+    getCotacao: getCotacao({getToday, getUrl, getCotacaoAPI, extractCotacao}),
+    extractCotacao,
+    getUrl,
+    pure: {
+        getCotacao
+    }
 }</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jul 08 2019 14:50:20 GMT-0300 (Hora oficial do Brasil)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jul 09 2019 13:41:42 GMT-0300 (Hora oficial do Brasil)
 </div>
 </div>
 <script src="prettify.js"></script>
